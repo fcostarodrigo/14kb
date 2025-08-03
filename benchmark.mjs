@@ -23,7 +23,7 @@ writeFileSync(
 writeFileSync(
   "benchmark.mmd",
   `%%{init: { 'themeVariables': { 'xyChart': { 'plotColorPalette': '#1d45aaff, #d84519ff' } } }}%%
-xychart
+xychart-beta
   title "Benchmark: 14kb vs 15kb"
   x-axis Iteration 1 --> 100
   y-axis "Time (ms)"
