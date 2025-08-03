@@ -1,31 +1,7 @@
-# 14kb
-
-Test the theory that 14kb loads much faster from the internet than 15kb.
-
-## Methodology
-
-Two random binary files of 14kb and 15kb are generated with a python script.
-
-```shell
-python generate.py
-```
-
-The files are served with GitHub Pages and downloaded 100 times each using a Node.js script. The script spawns a new Node.js process for each download to ensure that the connection is not reused. The results are saved in [benchmark.csv](benchmark.csv) and [benchmark.mmd](benchmark.mmd).
-
-```shell
-node benchmark.mjs
-```
-
-## Results
-
-Blue line is the 14kb file, red line is the 15kb file.
-
-```mermaid
 %%{init: { 'themeVariables': { 'xyChart': { 'plotColorPalette': '#1d45aaff, #d84519ff' } } }}%%
-xychart
+xychart-beta
   title "Benchmark: 14kb vs 15kb"
   x-axis Iteration 1 --> 100
   y-axis "Time (ms)"
   line [52, 46, 47, 46, 45, 45, 47, 46, 45, 47, 46, 46, 46, 46, 46, 46, 47, 47, 47, 46, 46, 46, 46, 47, 47, 46, 46, 46, 46, 47, 47, 46, 46, 47, 46, 47, 47, 47, 47, 48, 48, 46, 47, 35, 46, 47, 46, 46, 46, 45, 47, 47, 46, 46, 47, 44, 47, 47, 65, 60, 45, 47, 48, 47, 46, 48, 47, 47, 47, 45, 45, 76, 47, 47, 47, 46, 48, 47, 46, 47, 47, 45, 46, 48, 45, 48, 46, 46, 47, 46, 45, 61, 48, 46, 46, 46, 46, 48, 45, 46]
   line [47, 46, 46, 47, 47, 46, 46, 48, 47, 47, 47, 47, 46, 46, 48, 46, 46, 46, 47, 46, 46, 47, 47, 46, 46, 47, 48, 46, 47, 46, 47, 47, 46, 46, 46, 46, 46, 48, 46, 46, 46, 47, 47, 43, 46, 47, 47, 46, 47, 47, 46, 48, 48, 47, 48, 46, 47, 46, 61, 47, 45, 46, 46, 46, 46, 46, 47, 46, 47, 48, 53, 57, 62, 45, 46, 47, 46, 46, 47, 46, 46, 48, 45, 46, 46, 46, 47, 47, 46, 48, 47, 46, 46, 46, 47, 48, 45, 46, 47, 47]
-```
